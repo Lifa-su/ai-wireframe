@@ -395,6 +395,61 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   };
 })();
 </script>
+<!-- Pro Features -->
+<style>
+.pro-teaser{position:relative;margin:12px 0 0;padding:0;border-radius:10px;cursor:pointer;overflow:hidden;border:1px dashed rgba(108,92,231,0.3);transition:all .3s}
+.pro-teaser:hover{border-color:rgba(108,92,231,0.6);box-shadow:0 0 24px rgba(108,92,231,0.12)}
+.pro-teaser-content{padding:12px;filter:blur(3px);opacity:0.5;pointer-events:none;user-select:none}
+.pro-teaser-content .pm-title{font-size:.65rem;text-transform:uppercase;letter-spacing:1px;color:#6c5ce7;margin-bottom:8px;font-weight:600}
+.pro-teaser-content .pm-row{display:flex;gap:6px;margin-bottom:6px}
+.pro-teaser-content .pm-block{flex:1;height:24px;background:rgba(108,92,231,0.1);border-radius:5px}
+.pro-teaser-content .pm-line{height:8px;background:rgba(108,92,231,0.07);border-radius:3px;margin-bottom:5px}
+.pro-lock{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(10,10,26,0.35);z-index:2}
+.pro-lock .pl-icon{font-size:1.4rem;margin-bottom:3px}
+.pro-lock .pl-badge{font-size:.6rem;font-weight:800;color:#fff;background:linear-gradient(135deg,#6c5ce7,#a29bfe);padding:2px 10px;border-radius:20px;letter-spacing:1.5px}
+.pro-lock .pl-hint{font-size:.6rem;color:#8888aa;margin-top:4px}
+.pro-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:99999;align-items:center;justify-content:center}
+.pro-overlay.show{display:flex}
+.pro-card{background:linear-gradient(160deg,#1e1e38,#14142a);border:1px solid rgba(108,92,231,0.25);border-radius:20px;padding:36px 30px;max-width:440px;width:92%;text-align:center;box-shadow:0 24px 80px rgba(0,0,0,0.6);animation:pmIn .3s ease}
+@keyframes pmIn{from{opacity:0;transform:scale(.92) translateY(16px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.pro-card h2{font-size:1.45rem;margin-bottom:4px;background:linear-gradient(135deg,#6c5ce7,#a29bfe,#fd79a8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.pro-card .pc-sub{color:#8888aa;font-size:.85rem;margin-bottom:16px}
+.pro-card .pc-price{font-size:2.5rem;font-weight:800;color:#6c5ce7;margin:8px 0 2px}
+.pro-card .pc-note{font-size:.76rem;color:#666;margin-bottom:20px}
+.pro-card ul{text-align:left;list-style:none;margin:0 0 24px;padding:0}
+.pro-card ul li{padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:.87rem;color:#c0c0e0;display:flex;align-items:center;gap:10px}
+.pro-card ul li::before{content:'✓';color:#51cf66;font-weight:700;flex-shrink:0}
+.pro-card ul li:last-child{border-bottom:none}
+.pro-cta{display:block;width:100%;padding:14px;background:linear-gradient(135deg,#6c5ce7,#a29bfe);color:#fff;border:none;border-radius:12px;font-size:1.02rem;font-weight:700;cursor:pointer;transition:all .25s;text-decoration:none;text-align:center}
+.pro-cta:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(108,92,231,0.45)}
+.pro-skip{display:inline-block;margin-top:14px;padding:8px 20px;background:none;border:none;color:#555;cursor:pointer;font-size:.84rem;transition:color .2s}
+.pro-skip:hover{color:#ccc}
+</style>
+<div class="pro-overlay" id="proModal" onclick="if(event.target===this)this.classList.remove('show')">
+<div class="pro-card">
+<h2>🔓 Unlock Pro Features</h2>
+<p class="pc-sub">Professional wireframing with team collaboration</p>
+<div class="pc-price">$19</div>
+<p class="pc-note">One-time payment · Lifetime access</p>
+<ul>
+<li>Real-time team collaboration</li>
+<li>Extended component library</li>
+<li>Figma export integration</li>
+<li>Version history & snapshots</li>
+<li>Priority support & future updates</li>
+</ul>
+<a href="https://feifeicch.gumroad.com/l/ai-wireframe-pro" target="_blank" class="pro-cta">Upgrade to Pro — $19</a>
+<button class="pro-skip" onclick="document.getElementById('proModal').classList.remove('show')">Maybe later</button>
+</div>
+</div>
+<script>
+(function(){
+var t=document.createElement('div');t.className='pro-teaser';
+t.onclick=function(){document.getElementById('proModal').classList.add('show')};
+t.innerHTML='<div class="pro-lock"><div class="pl-icon">🔒</div><div class="pl-badge">PRO</div><div class="pl-hint">Click to unlock</div></div><div class="pro-teaser-content"><div class="pm-title">👥 Team & Export</div><div class="pm-row"><div class="pm-block" style="height:20px"></div><div class="pm-block" style="height:20px"></div></div><div class="pm-line" style="width:85%"></div><div class="pm-row"><div class="pm-block" style="height:18px"></div></div><div class="pm-line" style="width:60%"></div></div>';
+var s=document.querySelector('.panel');if(s)s.appendChild(t);
+})();
+</script>
 <script src="https://alwingulla.com/88/tag.min.js" data-zone="130747" async data-cfasync="false"></script>
 </body>
 </html>
